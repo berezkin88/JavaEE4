@@ -1,13 +1,13 @@
-package crud.dao;
+package crud.service;
 
 import crud.model.Product;
 
 import java.util.List;
 
 /**
- * Created by Alexander on 22/07/2017.
+ * Created by Alexander on 23/07/2017.
  */
-public interface ProductDao {
+public interface ProductService {
 
     void addProduct(Product product);
 
@@ -18,5 +18,4 @@ public interface ProductDao {
     void deleteProduct(Integer id);
 
     Product findProductById(Integer id);
-
 }
