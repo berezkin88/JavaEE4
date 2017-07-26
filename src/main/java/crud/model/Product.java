@@ -12,9 +12,9 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
+    @Column(name = "id")
     private Integer id;
 
     @Column(name = "title")

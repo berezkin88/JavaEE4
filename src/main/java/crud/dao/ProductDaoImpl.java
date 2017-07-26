@@ -19,7 +19,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public void addProduct(Product product) {
         sessionFactory.getCurrentSession().save(product);
-        LOGGER.info("Product successfully added");
+//        LOGGER.info("Product successfully added");
     }
 
     @Override
@@ -31,7 +31,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public void updateProduct(Product product) {
         sessionFactory.getCurrentSession().update(product);
-        LOGGER.info("Product successfully updated");
+//        LOGGER.info("Product successfully updated");
     }
 
     @Override
@@ -40,9 +40,9 @@ public class ProductDaoImpl implements ProductDao {
 
         if (product != null){
             sessionFactory.getCurrentSession().delete(product);
-            LOGGER.info("Product successfully deleted");
+//            LOGGER.info("Product successfully deleted");
         } else {
-            LOGGER.info("Product not found!");
+//            LOGGER.info("Product not found!");
         }
     }
 

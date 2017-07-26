@@ -48,7 +48,7 @@
 <c:url var="addAction" value="/products/add"/>
 <form:form action="${addAction}" commandName="product">
     <table>
-        <c:if test="${!empty product.bookTitle}">
+        <c:if test="${!empty product.title}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -104,10 +104,10 @@
         <tr>
             <td colspan="2">
                 <c:if test="${!empty product.title}">
-                    <input type="submit" value="<spring:message text="Edit book"/>"/>
+                    <input type="submit" value="<spring:message text="Edit product"/>"/>
                 </c:if>
                 <c:if test="${empty product.title}">
-                    <input type="submit" value="<spring:message text="Add book"/>"/>
+                    <input type="submit" value="<spring:message text="Add product"/>"/>
                 </c:if>
 
             </td>

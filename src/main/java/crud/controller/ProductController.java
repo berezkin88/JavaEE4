@@ -19,6 +19,11 @@ public class ProductController {
 
     private ProductService productService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
+
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String listProducts(Model model) {
         model.addAttribute("product", new Product());
@@ -28,7 +33,7 @@ public class ProductController {
 
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product) {
-        if (product.getId() == 0) {
+        if (product.getId() == null) {
             productService.addProduct(product);
         } else {
             productService.updateProduct(product);
