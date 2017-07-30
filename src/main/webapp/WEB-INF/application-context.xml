@@ -7,5 +7,9 @@
 
     <bean id="productDao" class="crud.dao.ProductDaoImpl"/>
     <bean id="productService" class="crud.service.ProductServiceImpl"/>
+    <bean id="userDao" class="crud.dao.UserDaoImpl"/>
+    <bean id="securityService" class="crud.service.SecurityServiceImpl"/>
+    <bean id="userService" class="crud.service.UserServiceImpl"/>
+    <bean id="userDetailService" class="crud.service.UserDetailServiceImpl"/>
 
 </beans>

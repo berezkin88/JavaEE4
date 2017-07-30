@@ -9,5 +9,9 @@ import java.util.List;
  */
 public interface UserDao {
 
+    void save(User user);
+
     User findUserById(Integer id);
+
+    User findByUsername(String username);
 }
