@@ -16,13 +16,13 @@ public class Role {
     @Column(name = "id")
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    public Integer id;
+    private Integer id;
 
     @Column(name = "role_title")
-    public String roleTitle;
+    private String roleTitle;
 
     @ManyToMany(mappedBy = "roles")
-    public Set<User> users;
+    private Set<User> users;
 
     public Role() {
     }
