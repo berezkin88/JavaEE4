@@ -17,14 +17,16 @@
     <tr>
         <th width="80">ID</th>
         <th width="120">Title</th>
-        <th width="120">Author</th>
+        <th width="120">Produser</th>
         <th width="120">Price</th>
+        <th width="120">Description</th>
     </tr>
     <tr>
         <td>${product.id}</td>
-        <td>${product.bookTitle}</td>
-        <td>${product.bookAuthor}</td>
-        <td>${product.price}}</td>
+        <td>${product.title}</td>
+        <td>${product.producer}</td>
+        <td>${product.price}</td>
+        <td>${product.description}</td>
     </tr>
 </table>
 </body>

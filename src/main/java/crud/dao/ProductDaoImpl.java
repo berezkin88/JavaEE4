@@ -3,6 +3,7 @@ package crud.dao;
 import crud.model.Product;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,12 +15,12 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao {
 
     private SessionFactory sessionFactory;
-    private Logger LOGGER;
+    private Logger LOGGER = LoggerFactory.getLogger(ProductDaoImpl.class);
 
     @Override
     public void addProduct(Product product) {
         sessionFactory.getCurrentSession().save(product);
-//        LOGGER.info("Product successfully added");
+        LOGGER.info("Product successfully added");
     }
 
     @Override
@@ -31,7 +32,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public void updateProduct(Product product) {
         sessionFactory.getCurrentSession().update(product);
-//        LOGGER.info("Product successfully updated");
+        LOGGER.info("Product successfully updated");
     }
 
     @Override
@@ -40,15 +41,17 @@ public class ProductDaoImpl implements ProductDao {
 
         if (product != null){
             sessionFactory.getCurrentSession().delete(product);
-//            LOGGER.info("Product successfully deleted");
+            LOGGER.info("Product successfully deleted");
         } else {
-//            LOGGER.info("Product not found!");
+            LOGGER.info("Product not found!");
         }
     }
 
     @Override
     public Product findProductById(Integer id) {
-        return sessionFactory.getCurrentSession().load(Product.class, new Integer(id));
+        Product product = sessionFactory.getCurrentSession().load(Product.class, id);
+        LOGGER.info("Product is successfully found. Details: " + product.toString());
+        return product;
     }
 
     public void setSessionFactory(SessionFactory sessionFactory) {

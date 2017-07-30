@@ -37,6 +37,7 @@
                 <td><a href="/productData/${product.id}" target="_blank">${product.title}</a></td>
                 <td>${product.producer}</td>
                 <td>${product.price}</td>
+                <td>${product.description}</td>
                 <td><a href="<c:url value="/edit/${product.id}"/>">Edit</a></td>
                 <td><a href="<c:url value="/remove/${product.id}"/>">Delete</a></td>
             </tr>
