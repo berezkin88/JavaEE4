@@ -20,13 +20,14 @@
         <logout logout-success-url="/login?logout"/>
     </http>
 
-    <!--<authentication-manager alias="authenticationManager">-->
-        <!--<authentication-provider user-service-ref="userDetailsServiceImpl">-->
-            <!--<password-encoder ref="encoder"></password-encoder>-->
-        <!--</authentication-provider>-->
-    <!--</authentication-manager>-->
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDetailServiceImpl">
+        </authentication-provider>
+    </authentication-manager>
 
-    <!--<beans:bean class="web.securityspring.service.UserDetailsServiceImpl" id="userDetailsServiceImpl"/>-->
+    <beans:bean id="userDetailServiceImpl" class="crud.service.UserDetailServiceImpl">
+        <beans:property name="userDao" ref="userDao"/>
+    </beans:bean>
 
     <!--<beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">-->
         <!--<beans:constructor-arg name="strength" value="11"/>-->

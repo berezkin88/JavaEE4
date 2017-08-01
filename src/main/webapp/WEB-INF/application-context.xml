@@ -10,8 +10,9 @@
     <bean id="userDao" class="crud.dao.UserDaoImpl"/>
     <bean id="securityService" class="crud.service.SecurityServiceImpl"/>
     <bean id="userService" class="crud.service.UserServiceImpl"/>
-    <bean id="userDetailService" class="crud.service.UserDetailServiceImpl"/>
+    <bean id="userDetailsService" class="crud.service.UserDetailServiceImpl"/>
     <bean id="roleDao" class="crud.dao.RoleDaoImpl"/>
     <bean id="userValidator" class="crud.validator.UserValidator"/>
+
 
 </beans>

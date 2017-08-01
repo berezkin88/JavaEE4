@@ -18,9 +18,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void save(User user) {
-        if (user.getId() != null) {
             sessionFactory.getCurrentSession().save(user);
-        }
     }
 
     @Override
