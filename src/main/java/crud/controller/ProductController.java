@@ -19,10 +19,10 @@ public class ProductController {
 
     private ProductService productService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(){
-        return "index";
-    }
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String index(){
+//        return "index";
+//    }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String listProducts(Model model) {
