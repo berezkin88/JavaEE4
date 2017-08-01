@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
@@ -37,6 +38,9 @@
 
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
 <h1>Products list</h1>
 
 <c:if test="${!empty listProducts}">
@@ -47,8 +51,6 @@
             <th width="120">Producer</th>
             <th width="120">Price</th>
             <th width="120">Description</th>
-            <th width="60">Edit</th>
-            <th width="60">Delete</th>
         </tr>
         <c:forEach items="${listProducts}" var="product">
             <tr>
@@ -63,7 +65,6 @@
 
 </c:if>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+<h3><a href="products" target="_blank">Go to working area</a></h3>
 </body>
 </html>

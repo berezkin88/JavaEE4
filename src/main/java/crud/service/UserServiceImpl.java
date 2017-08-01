@@ -6,6 +6,7 @@ import crud.model.Role;
 import crud.model.User;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
+    @Transactional
     public void save(User user) {
         Set<Role> roles = new HashSet<>();
         roles.add(roleDao.findRoleById(1));
@@ -28,6 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }

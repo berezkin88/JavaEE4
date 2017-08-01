@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 /**
  * Created by Alexander on 30/07/2017.
  */
@@ -25,6 +27,7 @@ public class SecurityServiceImpl implements SecurityService {
     private Logger LOGGER = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Override
+    @Transactional
     public String findLoggedInUsername() {
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
         if (userDetails instanceof UserDetails) {
@@ -35,6 +38,7 @@ public class SecurityServiceImpl implements SecurityService {
     }
 
     @Override
+    @Transactional
     public void autoLogin(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken authenticationToken =

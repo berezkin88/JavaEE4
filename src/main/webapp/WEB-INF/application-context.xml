@@ -12,5 +12,6 @@
     <bean id="userService" class="crud.service.UserServiceImpl"/>
     <bean id="userDetailService" class="crud.service.UserDetailServiceImpl"/>
     <bean id="roleDao" class="crud.dao.RoleDaoImpl"/>
+    <bean id="userValidator" class="crud.validator.UserValidator"/>
 
 </beans>
